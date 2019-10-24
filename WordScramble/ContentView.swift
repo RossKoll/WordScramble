@@ -68,8 +68,8 @@ struct ContentView: View {
         }
         
         usedWords.insert(answer, at: 0)
+        score += newWord.count
         newWord = ""
-        score += 1
     }
     
     func startGame() {
@@ -83,6 +83,7 @@ struct ContentView: View {
                 rootWord = allWords.randomElement() ?? "silworm"
                 score = 0
                 usedWords = [String]()
+                newWord = ""
                 // If we are here everything has worked, so we can exit
                 return
             }
